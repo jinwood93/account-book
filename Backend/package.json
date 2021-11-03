@@ -2,10 +2,11 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
-  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "preinstall": "npx npm-force-resolutions",
+    "dev": "nodemon --exec babel-node server --delay 2",
+    "migrate": "npx prisma migrate dev —preview-feature",
+    "studio": "npx prisma studio"
   },
   "keywords": [],
   "author": "",
@@ -17,13 +18,16 @@
   },
   "dependencies": {
     "@babel/core": "^7.16.0",
+    "@prisma/client": "^3.3.0",
     "apollo-server": "^2.25.2",
     "apollo-server-express": "2.19",
     "bcrypt": "^5.0.1",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "graphql": "^15.7.2",
+    "graphql-tools": "^7.0.2",
     "jsonwebtoken": "^8.5.1",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.14"
   }
 }
